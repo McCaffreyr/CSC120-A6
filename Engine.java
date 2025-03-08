@@ -1,4 +1,4 @@
-public class Engine implements EngineRequirements{
+public class Engine{
 
     //Attributes
     private FuelType f;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Car implements CarRequirements{
+public class Car{
 
     //Attributes
     private ArrayList<Passenger> passengersOnboard;
