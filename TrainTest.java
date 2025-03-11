@@ -35,7 +35,10 @@ public class TrainTest {
     // Car Tests
     @Test
     public void testCarAddPassenger() {
-        fail();
+        assertEquals(50, x.getCar(2).seatsRemaining());
+        Passenger jill = new Passenger("Jill");
+        x.getCar(2).addPassenger(jill);
+        assertEquals(49, x.getCar(2).seatsRemaining());
     }
 
     @Test
