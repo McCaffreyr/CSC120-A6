@@ -1,12 +1,23 @@
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
 
+
 public class TrainTest {
+
+    public Train x;
+
+    @Before
+    public void setup(){
+        this.x = new Train(FuelType.ELECTRIC, 50.0, 3, 50);
+    }
 
     // Engine Tests
     @Test
     public void testEngineConstructor() {
-        fail();
+        String expectedfuel = "ELECTRIC";
+        assertEquals(expectedfuel, x.getEngine().getFuelType());
     }
 
     @Test

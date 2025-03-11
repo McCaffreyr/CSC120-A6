@@ -68,6 +68,7 @@ public class Engine{
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 0., 100.);
         System.out.println(myEngine);
+        System.out.println(myEngine.getFuelType());
 
         Engine otherEngine = new Engine(FuelType.STEAM, 50., 100.);
         System.out.println(otherEngine);
