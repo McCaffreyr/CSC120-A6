@@ -10,19 +10,26 @@ public class TrainTest {
 
     @Before
     public void setup(){
-        this.x = new Train(FuelType.ELECTRIC, 50.0, 3, 50);
+        this.x = new Train(FuelType.ELECTRIC, 50.0, 6, 50);
     }
 
     // Engine Tests
     @Test
     public void testEngineConstructor() {
-        String expectedfuel = "ELECTRIC";
-        assertEquals(expectedfuel, x.getEngine().getFuelType());
+        String expectedfuel = "Engine has fuel type: ELECTRIC current fuel level: 6.0 and max fuel level: 50.0";
+        assertEquals(expectedfuel, x.getEngine().toString());
     }
+
+    //why is it thinking nCars is current fuel?????
+
+
+
 
     @Test
     public void testEngineGo() {
-        fail();
+        //because current fuel is 6, it'll go once and then not
+        assertEquals(true, x.getEngine().go());
+        assertEquals(false, x.getEngine().go());
     }
 
     // Car Tests
