@@ -3,12 +3,13 @@ import java.util.ArrayList;
 public class Train{
 
     //Attributes
-    private ArrayList<Car> carsattached;
-    private FuelType fuelType;
-    private double fuelCapacity;
-    private int nCars;
-    private int passengerCapacity;
-    private Engine myEngine;
+    public ArrayList<Car> carsattached;
+    public ArrayList<Passenger> totalppl;
+    public FuelType fuelType;
+    public double fuelCapacity;
+    public int nCars;
+    public int passengerCapacity;
+    public Engine myEngine;
 
     /**Constructer
      * @param fuelType Train's fuel type
@@ -18,6 +19,7 @@ public class Train{
      */
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         this.carsattached = new ArrayList<>();
+        this.totalppl = new ArrayList<Passenger>();
         this.fuelType = fuelType;
         this.fuelCapacity = fuelCapacity;
         this.nCars = nCars;
@@ -69,10 +71,11 @@ public class Train{
     /**
      * Prints all the names of the passengers on the train
      */
-    public void printManifest(){
+    public ArrayList printManifest(ArrayList totalppl){
         for (int k = 0; k < nCars; k++){
-            carsattached.get(k).printManifest();
+            carsattached.get(k).printManifest(totalppl);
         }
+        return totalppl;
     }
 
     public static void main(String[] args) {
@@ -89,7 +92,8 @@ public class Train{
 
         System.out.println(myTrain.seatsRemaining());
 
-        myTrain.printManifest();
+        ArrayList<Passenger> trainppl = new ArrayList<Passenger>();
+        myTrain.printManifest(trainppl);
     }
 
 

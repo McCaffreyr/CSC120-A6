@@ -13,23 +13,14 @@ public class Passenger{
      * Adds a passenger to a car if there is room
      */
     public void boardCar(Car c){
-        if (c.addPassenger(this)){
-            c.addPassenger(this);
-        }else{
-            System.out.println("Car is full.");
+        c.addPassenger(this);
         }
-    }
 
     /**
      * Removes a passenger from a car
      */
     public void getOffCar(Car c){
-        if (c.removePassenger(this)){
-            c.removePassenger(this);
-        }else{
-            System.out.println("This passenger wasn't in this car to begin with.");
+        c.removePassenger(this);
         }
-    }
-
 
 }

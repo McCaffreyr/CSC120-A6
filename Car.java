@@ -5,6 +5,8 @@ public class Car{
     //Attributes
     private ArrayList<Passenger> passengersOnboard;
     private int maxCapacity;
+    public ArrayList<Passenger> totalppl;
+
 
     /**Constructer
      * @param maxCapacity Max capacity of a car
@@ -12,6 +14,7 @@ public class Car{
     public Car(int maxCapacity){
         this.maxCapacity = maxCapacity;
         this.passengersOnboard = new ArrayList<Passenger>(maxCapacity);
+        this.totalppl = new ArrayList<Passenger>();
     }
 
     /**
@@ -56,15 +59,17 @@ public class Car{
     /**
      * Prints a list of all the passenger's names in a train car
      */
-    public void printManifest(){
+    public ArrayList printManifest(ArrayList totalppl){
         if (passengersOnboard.size() > 0){
             System.out.println("People on board:");
             for (int i = 0; i < passengersOnboard.size(); i++){
                 System.out.println(passengersOnboard.get(i).name);
+                totalppl.add(passengersOnboard.get(i));
             }
         }else{
             System.out.println("This car is EMPTY.");
             }
+        return totalppl;
         }
 
     public static void main(String[] args) {
@@ -77,9 +82,9 @@ public class Car{
         myCar.addPassenger(steve);
         myCar.addPassenger(abby);
 
-
+        ArrayList<Passenger> trainppl = new ArrayList<Passenger>();
         System.out.println(myCar.seatsRemaining());
-        myCar.printManifest();
+        myCar.printManifest(trainppl);
     }
 
 }
